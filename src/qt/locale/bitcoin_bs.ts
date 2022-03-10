@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="kk_KZ" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="bs" version="2.1">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -39,17 +39,17 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+22"/>
         <source>Double-click to edit address or label</source>
-        <translation>Адресті немесе белгіні өзгерту үшін екі рет шертіңіз</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+24"/>
         <source>Create a new address</source>
-        <translation>Жаңа адрес енгізу</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+10"/>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Таңдаған адресті тізімнен жою</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="-7"/>
@@ -99,7 +99,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+10"/>
         <source>&amp;Delete</source>
-        <translation>Жою</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+66"/>
@@ -119,7 +119,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+1"/>
         <source>Comma separated file (*.csv)</source>
-        <translation>Үтірмен бөлінген текст (*.csv)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+13"/>
@@ -137,17 +137,17 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location filename="../addresstablemodel.cpp" line="+145"/>
         <source>Label</source>
-        <translation>таңба</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+0"/>
         <source>Address</source>
-        <translation>Адрес</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+36"/>
         <source>(no label)</source>
-        <translation>(таңбасыз)</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -160,17 +160,17 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+21"/>
         <source>Enter passphrase</source>
-        <translation>Құпия сөзді енгізу</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+14"/>
         <source>New passphrase</source>
-        <translation>Жаңа құпия сөзі</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+14"/>
         <source>Repeat new passphrase</source>
-        <translation>Жаңа құпия сөзді қайта енгізу</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+33"/>
@@ -185,32 +185,32 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location filename="../askpassphrasedialog.cpp" line="+38"/>
         <source>Encrypt wallet</source>
-        <translation>Әмиянді шифрлау</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+7"/>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Бұл операциясы бойынша сіздің әмиянізді қоршаудан шығару үшін әмиянның құпия сөзі керек</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+5"/>
         <source>Unlock wallet</source>
-        <translation>Әмиянізді қоршаудан шығару</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+3"/>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Бұл операциясы бойынша сіздің әмиянізді шифрлап тастау үшін әмиянның құпия сөзі керек</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+5"/>
         <source>Decrypt wallet</source>
-        <translation>Әмиянізді шифрлап тастау</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+3"/>
         <source>Change passphrase</source>
-        <translation>Құпия сөзді өзгерту</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
@@ -504,7 +504,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message numerus="yes">
         <location line="+70"/>
         <source>%n active connection(s) to FlavaCoin network</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -635,18 +635,18 @@ Address: %4
     <message numerus="yes">
         <location line="+91"/>
         <source>%n second(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
         <location line="+4"/>
         <source>%n minute(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
         <location line="-429"/>
         <location line="+433"/>
         <source>%n hour(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="-456"/>
@@ -657,13 +657,13 @@ Address: %4
         <location line="+27"/>
         <location line="+433"/>
         <source>%n day(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message numerus="yes">
         <location line="-429"/>
         <location line="+6"/>
         <source>%n week(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+0"/>
@@ -673,7 +673,7 @@ Address: %4
     <message numerus="yes">
         <location line="+0"/>
         <source>%n year(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+5"/>
@@ -804,7 +804,7 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>Address</source>
-        <translation>Адрес</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+5"/>
@@ -916,7 +916,7 @@ Address: %4
         <location line="+35"/>
         <location line="+58"/>
         <source>(no label)</source>
-        <translation>(таңбасыз)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="-9"/>
@@ -1802,7 +1802,7 @@ Address: %4
     <message>
         <location line="+13"/>
         <source>(no label)</source>
-        <translation>(таңбасыз)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+4"/>
@@ -1851,7 +1851,7 @@ Address: %4
     <message>
         <location line="+10"/>
         <source>Alt+A</source>
-        <translation type="unfinished"/>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1861,7 +1861,7 @@ Address: %4
     <message>
         <location line="+10"/>
         <source>Alt+P</source>
-        <translation type="unfinished"/>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1907,7 +1907,7 @@ Address: %4
         <location line="-193"/>
         <location line="+203"/>
         <source>Alt+A</source>
-        <translation type="unfinished"/>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <location line="-193"/>
@@ -1917,7 +1917,7 @@ Address: %4
     <message>
         <location line="+10"/>
         <source>Alt+P</source>
-        <translation type="unfinished"/>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -2097,7 +2097,7 @@ Address: %4
     <message numerus="yes">
         <location line="+7"/>
         <source>, broadcast through %n node(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2150,7 +2150,7 @@ Address: %4
     <message numerus="yes">
         <location line="-102"/>
         <source>matures in %n more block(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2233,7 +2233,7 @@ Address: %4
     <message numerus="yes">
         <location line="-36"/>
         <source>Open for %n more block(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+67"/>
@@ -2269,7 +2269,7 @@ Address: %4
     <message>
         <location line="+0"/>
         <source>Address</source>
-        <translation>Адрес</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+0"/>
@@ -2289,7 +2289,7 @@ Address: %4
     <message numerus="yes">
         <location line="-15"/>
         <source>Open for %n more block(s)</source>
-        <translation type="unfinished"><numerusform></numerusform></translation>
+        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2388,12 +2388,12 @@ Address: %4
         <location filename="../transactionview.cpp" line="+54"/>
         <location line="+17"/>
         <source>All</source>
-        <translation type="unfinished"/>
+        <translation>Sve</translation>
     </message>
     <message>
         <location line="-16"/>
         <source>Today</source>
-        <translation type="unfinished"/>
+        <translation>Danas</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2403,17 +2403,17 @@ Address: %4
     <message>
         <location line="+1"/>
         <source>This month</source>
-        <translation type="unfinished"/>
+        <translation>Ovaj mjesec</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Last month</source>
-        <translation type="unfinished"/>
+        <translation>Prošli mjesec</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>This year</source>
-        <translation type="unfinished"/>
+        <translation>Ove godine</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2493,7 +2493,7 @@ Address: %4
     <message>
         <location line="+1"/>
         <source>Comma separated file (*.csv)</source>
-        <translation>Үтірмен бөлінген файл (*.csv)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+8"/>
@@ -2513,12 +2513,12 @@ Address: %4
     <message>
         <location line="+1"/>
         <source>Label</source>
-        <translation>таңба</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>
         <source>Address</source>
-        <translation>Адрес</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+1"/>

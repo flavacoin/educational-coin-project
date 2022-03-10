@@ -1,21 +1,26 @@
-Blackcoin More
-=============
+FlavaCoin 0.4.4 BETA
 
-Intro
+Copyright (c) 2013 NovaCoin Developers
+Copyright (c) 2011-2013 PPCoin Developers
+Distributed under the MIT/X11 software license, see the accompanying
+file license.txt or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in
+the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
+cryptographic software written by Eric Young (eay@cryptsoft.com).
+
+
+Introduction to FlavaCoin
 -----
-Blackcoin is a free open source peer-to-peer electronic cash system that is
-completely decentralized, without the need for a central server or trusted
-parties.  Users hold the crypto keys to their own money and transact directly
-with each other, with the help of a P2P network to check for double-spending.
+FlavaCoin is a free open source project derived from Bitcoin, with
+the goal of providing a long-term energy-efficient scrypt-based crypto-currency.
+Built on the foundation of Bitcoin, PPCoin and NovaCoin, innovations such as proof-of-stake and scrypt
+help further advance the field of crypto-currency.
 
+FlavaCoin is a free open source project derived from Bitcoin.
+It is more energy efficient
+More sustainable over the long term
+Advances in crypto technologies
+Based on the foundational work of Bitcoin, PPcoin and NovaCoin. 
+Innovations such as scrypt and proof of stake help advance the feild of crypto technologies. 
+Hybrid Proof Of Stake/Proof Of Work. 
 
-Setup
------
-Unpack the files into a directory and run blackmore-qt.exe.
-
-Blackcoin More is the original Blackcoin client and it builds the backbone of the network.
-However, it downloads and stores the entire history of Blackcoin transactions;
-depending on the speed of your computer and network connection, the synchronization
-process can take anywhere from a few hours to a day or more.
-
-See the Blackcoin More website at https://blackcoinmore.org for more help and information.

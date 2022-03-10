@@ -2,7 +2,7 @@ src/*.exe
 src/flavacoin
 src/flavacoind
 src/test_flavacoin
-src/build.h
+#src/build.h
 .*.swp
 *.*~*
 *.bak

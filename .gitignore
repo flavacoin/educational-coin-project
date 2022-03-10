@@ -1,24 +1,24 @@
-src/*.exe
-src/flavacoin
-src/flavacoind
-src/test_flavacoin
+#src/*.exe
+#src/flavacoin
+#src/flavacoind
+#src/test_flavacoin
 #src/build.h
-.*.swp
+#.*.swp
 *.*~*
 *.bak
 *.rej
 *.orig
-*.o
-*.patch
-.flavacoin
+#*.o
+#*.patch
+#.flavacoin
 #compilation and Qt preprocessor part
-*.qm
+#*.qm
 Makefile
-flavacoin-qt
+#flavacoin-qt
 #resources cpp
-qrc_*.cpp
+#qrc_*.cpp
 #qt creator
-*.pro.user
+#*.pro.user
 #mac specific
 .DS_Store
 #build

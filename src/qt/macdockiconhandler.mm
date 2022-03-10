@@ -1,53 +1,131 @@
-// Copyright (c) 2011-2019 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #include "macdockiconhandler.h"
 
-#include <AppKit/AppKit.h>
-#include <objc/runtime.h>
+#include <QImageWriter>
+#include <QMenu>
+#include <QBuffer>
+#include <QWidget>
 
-static MacDockIconHandler *s_instance = nullptr;
+#undef slots
+#include <Cocoa/Cocoa.h>
 
-bool dockClickHandler(id self, SEL _cmd, ...) {
-    Q_UNUSED(self)
-    Q_UNUSED(_cmd)
+#if QT_VERSION < 0x050000
+extern void qt_mac_set_dock_menu(QMenu *);
+#endif
 
-    Q_EMIT s_instance->dockIconClicked();
-
-    // Return NO (false) to suppress the default macOS actions
-    return false;
+@interface DockIconClickEventHandler : NSObject
+{
+    MacDockIconHandler* dockIconHandler;
 }
 
-void setupDockClickHandler() {
-    Class delClass = (Class)[[[NSApplication sharedApplication] delegate] class];
-    SEL shouldHandle = sel_registerName("applicationShouldHandleReopen:hasVisibleWindows:");
-    class_replaceMethod(delClass, shouldHandle, (IMP)dockClickHandler, "B@:");
+@end
+
+@implementation DockIconClickEventHandler
+
+- (id)initWithDockIconHandler:(MacDockIconHandler *)aDockIconHandler
+{
+    self = [super init];
+    if (self) {
+        dockIconHandler = aDockIconHandler;
+
+        [[NSAppleEventManager sharedAppleEventManager]
+            setEventHandler:self
+                andSelector:@selector(handleDockClickEvent:withReplyEvent:)
+              forEventClass:kCoreEventClass
+                 andEventID:kAEReopenApplication];
+    }
+    return self;
 }
+
+- (void)handleDockClickEvent:(NSAppleEventDescriptor*)event withReplyEvent:(NSAppleEventDescriptor*)replyEvent
+{
+    Q_UNUSED(event)
+    Q_UNUSED(replyEvent)
+
+    if (dockIconHandler) {
+        dockIconHandler->handleDockIconClickEvent();
+    }
+}
+
+@end
 
 MacDockIconHandler::MacDockIconHandler() : QObject()
 {
-    setupDockClickHandler();
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+    this->m_dockIconClickEventHandler = [[DockIconClickEventHandler alloc] initWithDockIconHandler:this];
+    this->m_dummyWidget = new QWidget();
+    this->m_dockMenu = new QMenu(this->m_dummyWidget);
+    this->setMainWindow(NULL);
+#if QT_VERSION < 0x050000
+    qt_mac_set_dock_menu(this->m_dockMenu);
+#endif
+    [pool release];
+}
+
+void MacDockIconHandler::setMainWindow(QMainWindow *window) {
+    this->mainWindow = window;
+}
+
+MacDockIconHandler::~MacDockIconHandler()
+{
+    [this->m_dockIconClickEventHandler release];
+    delete this->m_dummyWidget;
+    this->setMainWindow(NULL);
+}
+
+QMenu *MacDockIconHandler::dockMenu()
+{
+    return this->m_dockMenu;
+}
+
+void MacDockIconHandler::setIcon(const QIcon &icon)
+{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSImage *image = nil;
+    if (icon.isNull())
+        image = [[NSImage imageNamed:@"NSApplicationIcon"] retain];
+    else {
+        // generate NSImage from QIcon and use this as dock icon.
+        QSize size = icon.actualSize(QSize(128, 128));
+        QPixmap pixmap = icon.pixmap(size);
+
+        // Write image into a R/W buffer from raw pixmap, then save the image.
+        QBuffer notificationBuffer;
+        if (!pixmap.isNull() && notificationBuffer.open(QIODevice::ReadWrite)) {
+            QImageWriter writer(&notificationBuffer, "PNG");
+            if (writer.write(pixmap.toImage())) {
+                NSData* macImgData = [NSData dataWithBytes:notificationBuffer.buffer().data()
+                                             length:notificationBuffer.buffer().size()];
+                image =  [[NSImage alloc] initWithData:macImgData];
+            }
+        }
+
+        if(!image) {
+            // if testnet image could not be created, load std. app icon
+            image = [[NSImage imageNamed:@"NSApplicationIcon"] retain];
+        }
+    }
+
+    [NSApp setApplicationIconImage:image];
+    [image release];
+    [pool release];
 }
 
 MacDockIconHandler *MacDockIconHandler::instance()
 {
+    static MacDockIconHandler *s_instance = NULL;
     if (!s_instance)
         s_instance = new MacDockIconHandler();
     return s_instance;
 }
 
-void MacDockIconHandler::cleanup()
+void MacDockIconHandler::handleDockIconClickEvent()
 {
-    delete s_instance;
-}
+    if (this->mainWindow)
+    {
+        this->mainWindow->activateWindow();
+        this->mainWindow->show();
+    }
 
-/**
- * Force application activation on macOS. With Qt 5.5.1 this is required when
- * an action in the Dock menu is triggered.
- * TODO: Define a Qt version where it's no-longer necessary.
- */
-void ForceActivation()
-{
-    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+    emit this->dockIconClicked();
 }

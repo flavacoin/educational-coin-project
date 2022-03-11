@@ -1,0 +1,9 @@
+Building FlavaCoin
+
+See doc/readme-qt.rst for instructions on building FlavaCoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of FlavaCoin.
+
+See doc/build-*.txt for instructions on building flavacoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of FlavaCoin.

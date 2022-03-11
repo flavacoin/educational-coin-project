@@ -1,0 +1,2 @@
+debian/bin/flavacoind usr/bin
+src/flavacoind usr/lib/flavacoin

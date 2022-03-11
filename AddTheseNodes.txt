@@ -1,0 +1,8 @@
+Add these entries to flavacoin.conf
+
+
+
+addnode=backend.flavacoin.com
+addnode=fn1.backend.flavacoin.com
+addnode=fn2.backend.flavacoin.com
+addnode=fn3.backend.flavacoin.com
